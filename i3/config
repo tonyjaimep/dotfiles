@@ -1,0 +1,212 @@
+set $background_color   #040A12
+set $foreground_color   #E4E4E4
+set $active_color       #FFFFFF
+set $urgent_color       #E7017B
+set $inactive_color     #AAAAAA
+set $separator_color    #01d190
+set $background_image   ~/Pictures/Wallpapers/Blue/fishies.jpg
+
+set $workspace1 1D
+set $workspace2 2T
+set $workspace3 3B
+set $workspace4 4G
+set $workspace5 5R
+set $workspace6 6M
+set $workspace7 7F
+set $workspace8 8S
+set $workspace9 9E
+set $workspace10 10X
+
+set $mod Mod4
+font pango:Fira Mono for Powerline 9
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec rofi -show run
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+o split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# selector              border          bg              text              indicator
+client.focused          $active_color   $active_color   $foreground_color $active_color
+client.unfocused        $inactive_color $inactive_color $foreground_color $inactive_color
+client.focused_inactive $inactive_color $inactive_color $foreground_color $inactive_color
+client.urgent           $urgent_color   $urgent_color   $foreground_color $urgent_color
+
+bar {
+        status_command i3situation
+	position top
+	strip_workspace_numbers yes
+	separator_symbol  || 
+	colors {
+		separator  $separator_color
+		background $background_color
+		statusline $foreground_color
+		focused_workspace  $background_color $background_color $active_color
+		active_workspace   $background_color $background_color $active_color
+		inactive_workspace $background_color $background_color $inactive_color
+		urgent_workspace   $background_color $background_color $urgent_color
+	}
+}
+
+# window styling
+new_window none
+
+gaps inner 20
+workspace $workspace2 gaps inner 10
+workspace $workspace4 gaps inner 10
+workspace $workspace3 gaps inner 5
+
+# autostart
+exec_always xsetroot -solid '$background_color'
+exec_always feh --bg-fill $background_image
+exec --no-startup-id ~/Downloads/firefox/firefox
+
+exec compton -r 5 -o .70 --shadow -C --shadow-offset-x="-6" --shadow-offset-y="-6" --config /dev/null -i .90
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 '-5%'
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+bindsym Print exec --no-startup-id scrot -e 'mv $f /home/anon/Pictures/Screenshots/'
+bindsym $mod+Shift+F12 exec ~/Downloads/firefox/firefox
+
+# cmus control
+bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
+bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
+bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
+bindsym XF86AudioStop exec --no-startup-id cmus-remote -s
+
+
+set $i3exit /home/anon/bin/i3exit.sh
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $i3exit lock, mode "default"
+    bindsym e exec --no-startup-id $i3exit logout, mode "default"
+    bindsym s exec --no-startup-id $i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id $i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id $i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+s mode "$mode_system"
+
+assign [class="Atom"] $workspace2
+assign [class="Firefox"] $workspace3
+assign [class="Inkscape"] $workspace4
+assign [class="Gimp"] $workspace4
+assign [class="qBittorrent"] $workspace5
+assign [class="MuseScore2"] $workspace6
+assign [class="Audacity"] $workspace6
+assign [class="Thunar"] $workspace7
+assign [class="Lxappearance"] $workspace8
+assign [class="Evince"] $workspace9
+assign [class="mpv"] $workspace10

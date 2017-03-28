@@ -1,0 +1,65 @@
+! URXVT GENERAL CONFIG
+!------------------------------------------------
+URxvt*allow_bold: false
+URxvt.scrollBar: false
+URxvt.internalBorder: 10
+
+! URXVT FONT SETTINGS
+!------------------------------------------------ 
+URxvt.letterSpace: -1
+URxvt.font: xft:Fira Mono for Powerline:size=9
+
+Xcursor.theme: Paper
+
+! COLOR SCHEME 
+!------------------------------------------------
+*background: #040A12
+*foreground: #e4e4e4
+
+! black
+*color0: #040A12
+
+! bright_black
+*color8: #343A52
+
+! red
+*color1: #E7017B
+
+! bright_red
+*color9: #FDA3DE
+
+! green
+*color2: #7AE701
+
+! bright_green
+*color10: #b7ffb9
+
+! yellow
+*color3: #D6DA01
+
+! bright_yellow
+*color11: #ffeebb
+
+! blue
+*color4: #017BE7
+
+! bright_blue
+*color12: #b3c1ff
+
+! magenta
+*color5: #7008D0
+
+! bright_magenta
+*color13: #cca3ff
+
+! cyan
+*color6: #01E79F
+
+! bright_cyan
+*color14: #a7e3cd
+
+! white
+*color7: #e4e4e4
+
+! bright_white
+*color15: #f6f6f6
