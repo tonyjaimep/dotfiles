@@ -1,10 +1,10 @@
-set $background_color   #040A12
+set $background_color   #4C5B5C
 set $foreground_color   #E4E4E4
-set $active_color       #FFFFFF
-set $urgent_color       #E7017B
-set $inactive_color     #AAAAAA
-set $separator_color    #01d190
-set $background_image   ~/Pictures/Wallpapers/Blue/fishies.jpg
+set $active_color       #1C2B2C
+set $urgent_color       #FF715B
+set $inactive_color     #2C3B3C
+set $separator_color    #1C2B2C
+set $background_image   ~/.dotfiles/wallpaper.jpg
 
 set $workspace1 1D
 set $workspace2 2T
@@ -18,7 +18,7 @@ set $workspace9 9E
 set $workspace10 10X
 
 set $mod Mod4
-font pango:Fira Mono for Powerline 9
+font pango:Terminus 9
 floating_modifier $mod
 
 # start a terminal
@@ -139,9 +139,9 @@ client.urgent           $urgent_color   $urgent_color   $foreground_color $urgen
 
 bar {
         status_command i3situation
-	position top
+	position bottom
 	strip_workspace_numbers yes
-	separator_symbol  || 
+	separator_symbol  | 
 	colors {
 		separator  $separator_color
 		background $background_color
@@ -154,7 +154,7 @@ bar {
 }
 
 # window styling
-new_window none
+new_window pixel 3
 
 gaps inner 20
 workspace $workspace2 gaps inner 10
@@ -166,7 +166,7 @@ exec_always xsetroot -solid '$background_color'
 exec_always feh --bg-fill $background_image
 exec --no-startup-id ~/Downloads/firefox/firefox
 
-exec compton -r 5 -o .70 --shadow -C --shadow-offset-x="-6" --shadow-offset-y="-6" --config /dev/null -i .90
+exec compton
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 '-5%'

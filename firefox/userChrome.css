@@ -1,28 +1,28 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
 
 :root {
-  --background-color-0: #040A12;
-  --background-color-1: #040A12;
+  --background-color-0: #4C5B5C;
+  --background-color-1: #3C4B4C;
 
-  --main-nav-bg-color: var(--background-color-1);
+  --main-nav-bg-color: var(--background-color-0);
   --main-url-bg-color: var(--background-color-0);
   --main-url-text-color: #e4e4e4;
 
-  --main-tab-active-bg-color: var(--background-color-0);
-  --main-tab-active-hover-bg-color: var(--background-color-1);
+  --main-tab-active-bg-color: #4C5C5B;
+  --main-tab-active-hover-bg-color: #4C5C5B;
   --main-tab-active-text-color: #FFFFFF;
 
-  --main-tab-inactive-bg-color: var(--background-color-0);
-  --main-tab-inactive-hover-bg-color: var(--background-color-0);
+  --main-tab-inactive-bg-color: #3C4C4B;
+  --main-tab-inactive-hover-bg-color: #3C4C4B;
   --main-tab-inactive-text-color: #888888;
 
   --main-bookmark-text-color: #a7adba;
 
-  --main-border-radius: 0px;
-  --main-theme-border-color: #2D2D2D; /*rgba(0, 0, 0,.2);*/
+  --main-border-radius: 4px;
+  --main-theme-border-color: #ff0000; /*rgba(0, 0, 0,.2);*/
   --main-page-border-color: #000000; /*rgba(0, 0, 0,.2);*/
 
-  --main-font-family: "Fira Mono" !important;
+  --main-font-family: "Terminus (TTF)" !important;
   --main-theme-font-size: 9pt;
   --main-tab-font-size: 9pt;
 
@@ -33,10 +33,10 @@
   --main-show-forward-button: none; /* show: block; hide: none */
 
   --main-show-url-bar: -moz-box; /* show: -moz-box; hide: none */
-  --main-show-url-bar-margin-left: 10px; /* 10px if back/forward button is visible, else 42px */
+  --main-show-url-bar-margin-left: 42px; /* 10px if back/forward button is visible, else 42px */
   --main-show-url-refresh-button: none; /* show: block; hide: none */
 
-  --main-show-firefox-menu: block; /* show: block; hide: none */
+  --main-show-firefox-menu: none; /* show: block; hide: none */
   --main-show-tab-close-button: block; /* show: block; hide: none */
 
 }

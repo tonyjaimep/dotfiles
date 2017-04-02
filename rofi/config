@@ -3,23 +3,23 @@
 ! "Window width" Set from: Default
 ! rofi.width:                          50
 ! "Number of lines" Set from: Default
-! rofi.lines:                          15
+rofi.lines:                          2
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1
 ! "Font to use" Set from: Default
-rofi.font:                           Roboto Mono Thin 8
+rofi.font:                           Terminus 9
 ! "Color scheme for normal row" Set from: Default
-rofi.color-normal:                   #040A12,#e4e4e4,#040A12,#141A22,#ffffff
+rofi.color-normal:                   #4C5B5C,#e4e4e4,#4C5B5C,#3C4B4C,#ffffff
 ! "Color scheme for urgent row" Set from: Default
-rofi.color-urgent:                   #ff0000,#ff0000,#eee8d5,#dc322f,#fdf6e3
+! rofi.color-urgent:                   #ff0000,#ff0000,#eee8d5,#dc322f,#fdf6e3
 ! "Color scheme for active row" Set from: Default
 rofi.color-active:                   #fdf6e3,#e4e4e4,#161616,#268bd2,#161616
 ! "Color scheme window" Set from: Default
-rofi.color-window:                   #040A12,#0A0412
+rofi.color-window:                   #4C5B5C,#2C3B3C
 ! "Border width" Set from: Default
-rofi.bw:                             0
+rofi.bw:                             3
 ! "Location on screen" Set from: Default
-rofi.location:                       2
+rofi.location:                       0
 ! "Padding" Set from: Default
 rofi.padding:                        10
 ! "Y-offset relative to location" Set from: Default
