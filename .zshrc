@@ -82,7 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias pipes="~/bin/pipes.sh -r 200 -s 8 -f 20 -B"
+alias pipes="~/bin/pipes.sh -r 250 -f 20 -B"
 alias clock="tty-clock -c -C 7 -D"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"

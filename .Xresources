@@ -5,61 +5,61 @@ URxvt.scrollBar: false
 URxvt.internalBorder: 10
 
 ! URXVT FONT SETTINGS
-!------------------------------------------------ 
+!------------------------------------------------
 ! URxvt.letterSpace: -1
 URxvt.font: xft:Terminess Powerline:size=9
 
 Xcursor.theme: Paper
 
-! COLOR SCHEME 
+! COLOR SCHEME
 !------------------------------------------------
-*background: #4C5B5C
-*foreground: #E4E4E4
+*background: #152026
+*foreground: #BDB4AB
 
 ! black
-*color0: #2C3B3C
+*color0: #152026
 
 ! bright_black
-*color8: #6C7B7C
+*color8: #354036
 
 ! red
-*color1: #FF715B
+*color1: #BC9986
 
 ! bright_red
-*color9: #FF9282
+*color9: #ECC9B6
 
 ! green
-*color2: #C8EA4B
+*color2: #354E25
 
 ! bright_green
-*color10: #D8FC58
+*color10: #566A37
 
 ! yellow
-*color3: #FFD454
+*color3: #A1B049
 
 ! bright_yellow
-*color11: #FFDB70
+*color11: #D1E079
 
 ! blue
-*color4: #5476FF
+*color4: #40535D
 
 ! bright_blue
-*color12: #7590FF
+*color12: #70838D
 
 ! magenta
-*color5: #DC87FF
+*color5: #959D74
 
 ! bright_magenta
-*color13: #C587FF
+*color13: #B5BD94
 
 ! cyan
-*color6: #5AFCA8
+*color6: #3D4E3E
 
 ! bright_cyan
-*color14: #77FFB9
+*color14: #626E57
 
 ! white
-*color7: #E4E4E4
+*color7: #BDB4AB
 
 ! bright_white
-*color15: #F6F6F6
+*color15: #EDE4DB

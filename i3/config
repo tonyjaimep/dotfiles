@@ -1,9 +1,9 @@
-set $background_color   #4C5B5C
-set $foreground_color   #E4E4E4
-set $active_color       #1C2B2C
-set $urgent_color       #FF715B
-set $inactive_color     #2C3B3C
-set $separator_color    #1C2B2C
+set $background_color   #152026
+set $foreground_color   #BDB4AB
+set $active_color       #556066
+set $urgent_color       #BC9986
+set $inactive_color     #253036
+set $separator_color    #354046
 set $background_image   ~/.dotfiles/wallpaper.jpg
 
 set $workspace1 1D
@@ -139,7 +139,7 @@ client.urgent           $urgent_color   $urgent_color   $foreground_color $urgen
 
 bar {
         status_command i3situation
-	position bottom
+	position top
 	strip_workspace_numbers yes
 	separator_symbol  | 
 	colors {
@@ -154,9 +154,11 @@ bar {
 }
 
 # window styling
-new_window pixel 3
+new_window pixel 2
 
 gaps inner 20
+workspace $workspace1 gaps inner 40
+workspace $workspace1 gaps outer 20
 workspace $workspace2 gaps inner 10
 workspace $workspace4 gaps inner 10
 workspace $workspace3 gaps inner 5

@@ -387,7 +387,7 @@ underline_char="-"
 # Display colors 0-15 in the blocks.
 # neofetch --block_range 0 15
 start=0
-end=7
+end=15
 
 # Toggle color blocks
 #
