@@ -17,7 +17,7 @@ print_info() {
     info "Model" model
     # info "Kernel" kernel
     # info "Uptime" uptime
-    info "Packages" packages
+    # info "Packages" packages
     info "Shell" shell
     # info "Resolution" resolution
     # info "DE" de
@@ -27,7 +27,7 @@ print_info() {
     # info "Icons" icons
     info "Terminal" term
     # info "Terminal Font" term_font
-    info "CPU" cpu
+    # info "CPU" cpu
     # info "GPU" gpu
     info "Memory" memory
 
@@ -387,7 +387,7 @@ underline_char="-"
 # Display colors 0-15 in the blocks.
 # neofetch --block_range 0 15
 start=0
-end=15
+end=7
 
 # Toggle color blocks
 #
@@ -486,7 +486,7 @@ disk_display="off"
 # Flag:     --image
 #
 # NOTE: Change this to 'wallpaper', '/path/to/img' or /path/to/dir/' to enable image mode. You can also launch neofetch with '--image wallpaper' and etc.
-image_source="wallpaper"
+image_source="/home/anon/.dotfiles/wallpaper.jpg"
 
 # Thumbnail directory
 #

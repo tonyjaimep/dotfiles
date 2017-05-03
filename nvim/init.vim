@@ -19,3 +19,6 @@ call plug#end()
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "base16_chalk"
+
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

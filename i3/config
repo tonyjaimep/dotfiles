@@ -1,8 +1,8 @@
 set $background_color   #152026
 set $foreground_color   #BDB4AB
-set $active_color       #556066
+set $active_color       #99949A
 set $urgent_color       #BC9986
-set $inactive_color     #253036
+set $inactive_color     #556066
 set $separator_color    #354046
 set $background_image   ~/.dotfiles/wallpaper.jpg
 
@@ -18,7 +18,7 @@ set $workspace9 9E
 set $workspace10 10X
 
 set $mod Mod4
-font pango:Terminus 9
+font pango:Terminus (TTF) 9
 floating_modifier $mod
 
 # start a terminal
@@ -168,11 +168,15 @@ exec_always xsetroot -solid '$background_color'
 exec_always feh --bg-fill $background_image
 exec --no-startup-id ~/Downloads/firefox/firefox
 
+# compositor
 exec compton
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 '-5%'
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86ScreenSaver exec i3lock
+bindsym XF86Launch1 exec mpv ~/.dotfiles/song.mp3
+
 
 bindsym Print exec --no-startup-id scrot -e 'mv $f /home/anon/Pictures/Screenshots/'
 bindsym $mod+Shift+F12 exec ~/Downloads/firefox/firefox

@@ -1,20 +1,20 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
 
 :root {
-  --background-color-0: #4C5B5C;
-  --background-color-1: #3C4B4C;
+  --background-color-0: #152026;
+  --background-color-1: #253036;
 
   --main-nav-bg-color: var(--background-color-0);
   --main-url-bg-color: var(--background-color-0);
-  --main-url-text-color: #e4e4e4;
+  --main-url-text-color: #BDB4AB;
 
-  --main-tab-active-bg-color: #4C5C5B;
-  --main-tab-active-hover-bg-color: #4C5C5B;
-  --main-tab-active-text-color: #FFFFFF;
+  --main-tab-active-bg-color: var(--background-color-0);
+  --main-tab-active-hover-bg-color: var(--background-color-0);
+  --main-tab-active-text-color: #CDC9BB;
 
-  --main-tab-inactive-bg-color: #3C4C4B;
-  --main-tab-inactive-hover-bg-color: #3C4C4B;
-  --main-tab-inactive-text-color: #888888;
+  --main-tab-inactive-bg-color: var(--background-color-1);
+  --main-tab-inactive-hover-bg-color: var(--background-color-1);
+  --main-tab-inactive-text-color: #BDB4AB;
 
   --main-bookmark-text-color: #a7adba;
 
@@ -36,7 +36,7 @@
   --main-show-url-bar-margin-left: 42px; /* 10px if back/forward button is visible, else 42px */
   --main-show-url-refresh-button: none; /* show: block; hide: none */
 
-  --main-show-firefox-menu: none; /* show: block; hide: none */
+  --main-show-firefox-menu: block; /* show: block; hide: none */
   --main-show-tab-close-button: block; /* show: block; hide: none */
 
 }

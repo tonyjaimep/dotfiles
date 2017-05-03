@@ -20,43 +20,43 @@ Xcursor.theme: Paper
 *color0: #152026
 
 ! bright_black
-*color8: #354036
+*color8: #455046
 
 ! red
 *color1: #BC9986
 
 ! bright_red
-*color9: #ECC9B6
+*color9: #DEA4A4
 
 ! green
 *color2: #354E25
 
 ! bright_green
-*color10: #566A37
+*color10: #B4E8A2
 
 ! yellow
 *color3: #A1B049
 
 ! bright_yellow
-*color11: #D1E079
+*color11: #E4E86D
 
 ! blue
 *color4: #40535D
 
 ! bright_blue
-*color12: #70838D
+*color12: #A2C4E8
 
 ! magenta
 *color5: #959D74
 
 ! bright_magenta
-*color13: #B5BD94
+*color13: #DD99F0
 
 ! cyan
 *color6: #3D4E3E
 
 ! bright_cyan
-*color14: #626E57
+*color14: #AFF0DA
 
 ! white
 *color7: #BDB4AB
