@@ -1,65 +1,79 @@
+! XFT SETTINGS
+!________________________________________________
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                false
+! Xft.hintstyle:              hintslight
+
 ! URXVT GENERAL CONFIG
 !------------------------------------------------
-URxvt*allow_bold: false
+URxvt.allow_bold: false
 URxvt.scrollBar: false
-URxvt.internalBorder: 10
+URxvt.internalBorder: 15
+URxvt.perl-lib: /home/anon/.urxvt/ext/font-size
+URxvt.perl-ext-common: font-size
 
 ! URXVT FONT SETTINGS
 !------------------------------------------------
 ! URxvt.letterSpace: -1
-URxvt.font: xft:Terminess Powerline:size=9
+URxvt.font: xft:Fira Mono:size=9
+font: xft:Roboto Mono:size=9
 
 Xcursor.theme: Paper
 
 ! COLOR SCHEME
 !------------------------------------------------
-*background: #152026
-*foreground: #BDB4AB
+*background: #121212
+*foreground: #F9F5EA
 
 ! black
-*color0: #152026
-
-! bright_black
-*color8: #455046
-
+*color0: #121212
 ! red
-*color1: #BC9986
-
-! bright_red
-*color9: #DEA4A4
-
+*color1: #D53D61
 ! green
-*color2: #354E25
-
-! bright_green
-*color10: #B4E8A2
-
+*color2: #80D550
 ! yellow
-*color3: #A1B049
-
-! bright_yellow
-*color11: #E4E86D
-
+*color3: #F2F20D
 ! blue
-*color4: #40535D
-
-! bright_blue
-*color12: #A2C4E8
-
+*color4: #8EDAF2
 ! magenta
-*color5: #959D74
-
-! bright_magenta
-*color13: #DD99F0
-
+*color5: #986BBB
 ! cyan
-*color6: #3D4E3E
-
-! bright_cyan
-*color14: #AFF0DA
-
+*color6: #80EBC9
 ! white
-*color7: #BDB4AB
+*color7: #D8D8D8
 
-! bright_white
-*color15: #EDE4DB
+! bright black
+*color8: #444444
+! bright red
+*color9: #bd546a
+! bright green
+*color10: #aae34e
+! bright yellow
+*color11: #f6f55b
+! bright blue
+*color12: #B4E2F1
+! bright magenta
+*color13: #BC9FD3
+! bright cyan
+*color14: #8bedde
+! bright white
+*color15: #F9F5EA
+
+! ROFI
+!_____
+rofi.width: 50
+rofi.font: Fira Mono 9
+rofi.lines: 3
+rofi.color-normal: #121212,#e0e8e1,#121212,#333333,#e2e8e1
+rofi.color-window: #121212,#676C71
+rofi.bw: 5
+rofi.padding: 20
+rofi.fixed-num-lines: false
+rofi.cycle: false
+rofi.hide-scrollbar: true
+rofi.separator-style: none
+rofi.fake-transparency: false
+rofi.fake-background: screenshot
+rofi.yoffset: -130

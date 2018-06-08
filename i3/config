@@ -1,24 +1,31 @@
-set $background_color   #152026
-set $foreground_color   #BDB4AB
-set $active_color       #99949A
-set $urgent_color       #BC9986
-set $inactive_color     #556066
-set $separator_color    #354046
+set_from_resource $background_color			i3wm.background #000000
+set_from_resource $foreground_color			i3wm.foreground	#FFFFFF
+set_from_resource $active_window_color		i3wm.color7		#FFFFFF
+
+set $inactive_window_color	#333333
+
+set_from_resource $inactive_workspace_color i3wm.color8		#929891
+set_from_resource $active_workspace_color   i3wm.color7		#e4eae3
+set_from_resource $urgent_color             i3wm.color1		#BC9986
+set_from_resource $separator_color          i3wm.color8		#354046
+
+set $font Fira Mono, FontAwesome
+
 set $background_image   ~/.dotfiles/wallpaper.jpg
 
-set $workspace1 1D
-set $workspace2 2T
-set $workspace3 3B
-set $workspace4 4G
-set $workspace5 5R
-set $workspace6 6M
-set $workspace7 7F
-set $workspace8 8S
-set $workspace9 9E
-set $workspace10 10X
+set $workspace1 1一
+set $workspace2 2二
+set $workspace3 3三
+set $workspace4 4四
+set $workspace5 5五
+set $workspace6 6六
+set $workspace7 7七
+set $workspace8 8八
+set $workspace9 9九
+set $workspace10 10十
 
 set $mod Mod4
-font pango:Terminus (TTF) 9
+font pango:$font 9
 floating_modifier $mod
 
 # start a terminal
@@ -27,8 +34,12 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
+# start program executer
+bindsym $mod+x exec rofi -show run
+# window switcher
+bindsym $mod+z exec rofi -show window
+# project workspace setup
+bindsym $mod+p exec rofi -show window
 
 # change focus
 bindsym $mod+h focus left
@@ -112,49 +123,54 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+mode "Resize" {
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
-# selector              border          bg              text              indicator
-client.focused          $active_color   $active_color   $foreground_color $active_color
-client.unfocused        $inactive_color $inactive_color $foreground_color $inactive_color
-client.focused_inactive $inactive_color $inactive_color $foreground_color $inactive_color
-client.urgent           $urgent_color   $urgent_color   $foreground_color $urgent_color
+# selector              border					bg                     text                 indicator
+client.focused          $active_window_color	$active_window_color   $background_color    $active_window_color
+client.unfocused        $inactive_window_color	$inactive_window_color $active_window_color $inactive_window_color
+client.focused_inactive $active_window_color	$inactive_window_color $foreground_color    $inactive_window_color
+client.urgent           $urgent_color          $urgent_color          $foreground_color    $urgent_color
 
 bar {
-        status_command i3situation
+	output VGA-1
+	mode invisible
+	tray_output none
+}
+
+bar {
+	output LVDS-1
+	tray_output LVDS-1
+	status_command i3status
 	position top
 	strip_workspace_numbers yes
-	separator_symbol  | 
+	separator_symbol |
 	colors {
 		separator  $separator_color
 		background $background_color
 		statusline $foreground_color
-		focused_workspace  $background_color $background_color $active_color
-		active_workspace   $background_color $background_color $active_color
-		inactive_workspace $background_color $background_color $inactive_color
+		focused_workspace  $background_color $background_color $active_workspace_color
+		active_workspace   $background_color $background_color $active_workspace_color
+		inactive_workspace $background_color $background_color $inactive_workspace_color
 		urgent_workspace   $background_color $background_color $urgent_color
 	}
 }
-
-# window styling
-new_window pixel 2
 
 gaps inner 20
 workspace $workspace1 gaps inner 40
@@ -164,11 +180,7 @@ workspace $workspace4 gaps inner 10
 workspace $workspace3 gaps inner 5
 
 # autostart
-exec_always xsetroot -solid '$background_color'
 exec_always feh --bg-fill $background_image
-exec --no-startup-id ~/Downloads/firefox/firefox
-
-# compositor
 exec compton
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -177,9 +189,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86ScreenSaver exec i3lock
 bindsym XF86Launch1 exec mpv ~/.dotfiles/song.mp3
 
-
 bindsym Print exec --no-startup-id scrot -e 'mv $f /home/anon/Pictures/Screenshots/'
-bindsym $mod+Shift+F12 exec ~/Downloads/firefox/firefox
 
 # cmus control
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
@@ -191,28 +201,33 @@ bindsym XF86AudioStop exec --no-startup-id cmus-remote -s
 set $i3exit /home/anon/bin/i3exit.sh
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $i3exit lock, mode "default"
-    bindsym e exec --no-startup-id $i3exit logout, mode "default"
-    bindsym s exec --no-startup-id $i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id $i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id $i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id $i3exit shutdown, mode "default"
+	bindsym l exec --no-startup-id $i3exit lock, mode "default"
+	bindsym e exec --no-startup-id $i3exit logout, mode "default"
+	bindsym s exec --no-startup-id $i3exit suspend, mode "default"
+	bindsym h exec --no-startup-id $i3exit hibernate, mode "default"
+	bindsym r exec --no-startup-id $i3exit reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id $i3exit shutdown, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+Shift+s mode "$mode_system"
 
-assign [class="Atom"] $workspace2
-assign [class="Firefox"] $workspace3
-assign [class="Inkscape"] $workspace4
-assign [class="Gimp"] $workspace4
-assign [class="qBittorrent"] $workspace5
-assign [class="MuseScore2"] $workspace6
-assign [class="Audacity"] $workspace6
-assign [class="Thunar"] $workspace7
-assign [class="Lxappearance"] $workspace8
-assign [class="Evince"] $workspace9
-assign [class="mpv"] $workspace10
+# assign [class="Atom"] $workspace2
+# assign [class="Firefox"] $workspace3
+# assign [class="Inkscape"] $workspace4
+# assign [class="Gimp"] $workspace4
+# assign [class="qBittorrent"] $workspace5
+# assign [class="MuseScore2"] $workspace6
+# assign [class="Audacity"] $workspace6
+# assign [class="Thunar"] $workspace7
+# assign [class="Lxappearance"] $workspace8
+# assign [class="Evince"] $workspace9
+# assign [class="mpv"] $workspace10
+
+new_window pixel 5
+
+for_window [instance="Devtools" class="Firefox"] floating enable
+for_window [window_role="pop-up" class="Chromium"] floating enable

@@ -1,8 +1,0 @@
-rofi.lines:                          2
-rofi.font:                           Terminus 9
-rofi.color-normal:                   #152026,#e4e4e4,#152026,#253036,#ffffff
-rofi.color-active:                   #fdf6e3,#e4e4e4,#253036,
-rofi.color-window:                   #152026,#354E25
-rofi.bw:                             2
-rofi.location:                       0
-rofi.padding:                        10
