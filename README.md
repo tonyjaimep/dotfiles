@@ -2,7 +2,7 @@
 My past and current dotfiles
 
 ## Screenshots
-###Clean
+### Clean
 ![Clean](screenshots/clean.png)
-###Dirty
+### Dirty
 ![Dirty](screenshots/dirty.png)
