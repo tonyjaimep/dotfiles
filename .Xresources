@@ -17,18 +17,18 @@ URxvt.perl-ext-common: font-size
 ! URXVT FONT SETTINGS
 !------------------------------------------------
 ! URxvt.letterSpace: -1
-URxvt.font: xft:Fira Mono:size=9
-font: xft:Roboto Mono:size=9
+URxvt.font: xft:Tewi:size=9
+font: xft:Tewi:size=9
 
 Xcursor.theme: Paper
 
 ! COLOR SCHEME
 !------------------------------------------------
-*background: #121212
-*foreground: #F9F5EA
+*background:   #000000
+*foreground:   #DDD
 
 ! black
-*color0: #121212
+*color0: #000
 ! red
 *color1: #D53D61
 ! green
@@ -45,7 +45,7 @@ Xcursor.theme: Paper
 *color7: #D8D8D8
 
 ! bright black
-*color8: #444444
+*color8: #555
 ! bright red
 *color9: #bd546a
 ! bright green
@@ -59,16 +59,16 @@ Xcursor.theme: Paper
 ! bright cyan
 *color14: #8bedde
 ! bright white
-*color15: #F9F5EA
+*color15: #DDDDDD
 
 ! ROFI
 !_____
 rofi.width: 50
-rofi.font: Fira Mono 9
+rofi.font: Tewi 9
 rofi.lines: 3
-rofi.color-normal: #121212,#e0e8e1,#121212,#333333,#e2e8e1
-rofi.color-window: #121212,#676C71
-rofi.bw: 5
+rofi.color-normal: #000,#e0e8e1,#000,#333333,#e2e8e1
+rofi.color-window: #000,#676C71
+rofi.bw: 1
 rofi.padding: 20
 rofi.fixed-num-lines: false
 rofi.cycle: false

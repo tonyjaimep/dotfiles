@@ -9,9 +9,10 @@ set_from_resource $active_workspace_color   i3wm.color7		#e4eae3
 set_from_resource $urgent_color             i3wm.color1		#BC9986
 set_from_resource $separator_color          i3wm.color8		#354046
 
-set $font Fira Mono, FontAwesome
+set $font Tewi
 
-set $background_image   ~/.dotfiles/wallpaper.jpg
+# set $background_image   ~/.dotfiles/wallpaper.jpg
+set $background_color_solid #181818
 
 set $workspace1 1一
 set $workspace2 2二
@@ -35,7 +36,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start program executer
-bindsym $mod+x exec rofi -show run
+bindsym $mod+Shift+colon exec rofi -show run
 # window switcher
 bindsym $mod+z exec rofi -show window
 # project workspace setup
@@ -157,7 +158,7 @@ bar {
 bar {
 	output LVDS-1
 	tray_output LVDS-1
-	status_command i3status
+	status_command ~/.dotfiles/bin/conky-i3bar
 	position top
 	strip_workspace_numbers yes
 	separator_symbol |
@@ -180,7 +181,8 @@ workspace $workspace4 gaps inner 10
 workspace $workspace3 gaps inner 5
 
 # autostart
-exec_always feh --bg-fill $background_image
+# exec_always feh --bg-fill $background_image
+exec_always hsetroot -solid '$background_color_solid'
 exec compton
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
@@ -189,7 +191,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86ScreenSaver exec i3lock
 bindsym XF86Launch1 exec mpv ~/.dotfiles/song.mp3
 
-bindsym Print exec --no-startup-id scrot -e 'mv $f /home/anon/Pictures/Screenshots/'
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots/'
 
 # cmus control
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
@@ -197,8 +199,7 @@ bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 bindsym XF86AudioStop exec --no-startup-id cmus-remote -s
 
-
-set $i3exit /home/anon/bin/i3exit.sh
+set $i3exit ~/bin/i3exit.sh
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
 	bindsym l exec --no-startup-id $i3exit lock, mode "default"
@@ -215,19 +216,7 @@ mode "$mode_system" {
 
 bindsym $mod+Shift+s mode "$mode_system"
 
-# assign [class="Atom"] $workspace2
-# assign [class="Firefox"] $workspace3
-# assign [class="Inkscape"] $workspace4
-# assign [class="Gimp"] $workspace4
-# assign [class="qBittorrent"] $workspace5
-# assign [class="MuseScore2"] $workspace6
-# assign [class="Audacity"] $workspace6
-# assign [class="Thunar"] $workspace7
-# assign [class="Lxappearance"] $workspace8
-# assign [class="Evince"] $workspace9
-# assign [class="mpv"] $workspace10
-
-new_window pixel 5
+new_window pixel 1
 
 for_window [instance="Devtools" class="Firefox"] floating enable
 for_window [window_role="pop-up" class="Chromium"] floating enable

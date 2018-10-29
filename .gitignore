@@ -1,0 +1,16 @@
+cmus/autosave
+cmus/cache
+cmus/cmusfm.conf
+cmus/command-history
+cmus/lib.pl
+cmus/playlist.pl
+cmus/search-history
+fish/fishd.debian
+nvim/.netrwhist
+ranger/bookmarks
+ranger/commands.py
+ranger/commands_full.py
+ranger/history
+ranger/rifle.conf
+ranger/scope.sh
+ranger/tagged
