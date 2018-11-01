@@ -199,7 +199,7 @@ bindsym XF86AudioNext exec --no-startup-id cmus-remote -n
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote -r
 bindsym XF86AudioStop exec --no-startup-id cmus-remote -s
 
-set $i3exit ~/bin/i3exit.sh
+set $i3exit ~/.dotfiles/bin/i3exit.sh
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
 	bindsym l exec --no-startup-id $i3exit lock, mode "default"
