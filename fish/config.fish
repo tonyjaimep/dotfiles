@@ -31,7 +31,7 @@ set fish_color_quote green
 set fish_color_param blue
 
 function fish_greeting
-	fortune -a | lolcat
+	fortune -as
 end
 
 set -gx PATH ~/.composer/vendor/bin/ $PATH
