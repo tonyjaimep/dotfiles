@@ -16,9 +16,9 @@ URxvt.perl-ext-common: font-size
 
 ! URXVT FONT SETTINGS
 !------------------------------------------------
-! URxvt.letterSpace: -1
-URxvt.font: xft:Tewi:size=9
-font: xft:Tewi:size=9
+URxvt.letterSpace: -1
+URxvt.font: xft:IBM Plex Mono:size=9
+font: xft:IBM Plex Mono:size=9
 
 Xcursor.theme: Paper
 

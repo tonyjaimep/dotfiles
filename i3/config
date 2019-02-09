@@ -9,7 +9,7 @@ set_from_resource $active_workspace_color   i3wm.color7		#e4eae3
 set_from_resource $urgent_color             i3wm.color1		#BC9986
 set_from_resource $separator_color          i3wm.color8		#354046
 
-set $font Tewi
+set $font IBM Plex Mono
 
 # set $background_image   ~/.dotfiles/wallpaper.jpg
 set $background_color_solid #181818
