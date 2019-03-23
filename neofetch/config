@@ -17,7 +17,6 @@ print_info() {
     # info "Theme" theme
     info "Terminal" term
     info "Memory" memory
-    prin "Friends" "0"
     info "Song" song
     # info "Local IP" local_ip
 

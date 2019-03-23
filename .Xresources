@@ -27,6 +27,10 @@ Xcursor.theme: Paper
 *background:   #000000
 *foreground:   #DDD
 
+! EMACS
+! -----------------------------------------------
+Emacs.font: IBM Plex Mono-9
+
 ! black
 *color0: #000
 ! red
@@ -64,8 +68,8 @@ Xcursor.theme: Paper
 ! ROFI
 !_____
 rofi.width: 50
-rofi.font: Tewi 9
 rofi.lines: 3
+rofi.font: IBM Plex Mono 9
 rofi.color-normal: #000,#e0e8e1,#000,#333333,#e2e8e1
 rofi.color-window: #000,#676C71
 rofi.bw: 1

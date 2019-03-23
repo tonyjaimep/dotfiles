@@ -17,6 +17,19 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+tnoremap <Esc> <C-\><C-n>
+
+" show highlighting groups
+" (useful for creating a color theme)
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
 " more natural splitting
 set splitbelow
 set splitright
@@ -38,8 +51,11 @@ Plug ('jiangmiao/auto-pairs')
 Plug ('lumiliet/vim-twig')
 Plug ('jwalton512/vim-blade')
 Plug ('posva/vim-vue')
+Plug ('octol/vim-cpp-enhanced-highlight')
+Plug ('StanAngeloff/php.vim')
 
 Plug ('Valloric/YouCompleteMe')
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
 Plug ('scrooloose/nerdtree')
 Plug ('jistr/vim-nerdtree-tabs')
@@ -52,6 +68,7 @@ let g:nerdtree_tabs_open_on_console_startup = 2
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = "/home/anon/.dotfiles/.ycm_extra_conf.py"
+let g:ycm_rust_src_path = "/home/anon/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src"
 
 let g:airline_theme='minimalist'
 

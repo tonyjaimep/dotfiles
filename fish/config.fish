@@ -13,7 +13,7 @@ alias uninstall="sudo apt remove"
 alias v="vim"
 alias e="emacs -nw"
 alias g="git"
-alias py3="python3.6m"
+alias py3="python3.7m"
 alias g++17="g++ -std=gnu++17"
 
 # courtesy is key
@@ -36,7 +36,12 @@ end
 set fish_color_cwd brblack
 set fish_color_quote green
 set fish_color_param blue
-set fish_vi_keybindings
+
+# make a directory and switch immediatly to it
+function mkcd
+	mkdir $argv[1]
+	cd $argv[1]
+end
 
 # display a random phrase from "The art of war" when terminal is started.
 function fish_greeting
@@ -45,3 +50,5 @@ end
 
 # add composer to path
 set -gx PATH ~/.composer/vendor/bin/ $PATH
+set -gx PATH ~/.local/bin $PATH
+set -gx PATH ~/.cargo/bin $PATH
